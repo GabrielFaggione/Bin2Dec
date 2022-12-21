@@ -1,0 +1,38 @@
+<div class="main-div">
+    <mat-card>
+        <mat-card-header>
+            <h2>Bin2Dec</h2>
+        </mat-card-header>
+    
+        <mat-card-content>
+            <div class="form-container">
+                <form [formGroup]="formGroup">
+                    <mat-form-field>
+                        <mat-label>Binary Value</mat-label>
+                        <input type="text" matInput formControlName="binaryValue" placeholder="Ex. 10101010" [(ngModel)]="binaryValue" (change)="calculateDecimalValue()" autocomplete="off">
+                        <mat-error *ngIf="!formGroup.controls.binaryValue.hasError('required')">
+                            Please enter only '0' or '1' values
+                        </mat-error>
+                        <mat-error *ngIf="formGroup.controls.binaryValue.hasError('required')">
+                            Empty value to calculate
+                        </mat-error>
+                    </mat-form-field>
+                </form>
+                <mat-form-field>
+                    <mat-label>Decimal Value</mat-label>
+                    <input matInput disabled value="{{decimalValue}}">
+                </mat-form-field>
+            </div>
+        </mat-card-content>
+        <mat-divider></mat-divider>
+        <br>
+        <mat-card-footer>
+            <p>
+                <a href="https://github.com/florinpop17/app-ideas" target="_blank" rel="noopener noreferrer">AppIdeas</a>
+                |
+                <a href="https://github.com/GabrielFaggione?tab=repositories" target="_blank" rel="noopener noreferrer">My Github</a>
+            </p>
+        </mat-card-footer>
+    </mat-card>
+</div>
+
